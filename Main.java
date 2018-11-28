@@ -53,7 +53,7 @@ public class Main {
                 // Reverse array
             }else if (choice == 10){
                 // Shift array
-                System.out.println(shift_array());
+                System.out.println("The sifted array is : " + shift_array());
             }else if (choice == 11){
                 // Distinct array
             }else if (choice == 12){
@@ -70,11 +70,17 @@ public class Main {
                 // Zero if less than zero
             }else if (choice == 18){
                 // Execute all functions
+                execute_all ();
             }
             else
                 break;  //exit
             System.out.println("===========================================");
         }
+    }
+
+    public  static void execute_all (){
+        System.out.println("    --Shift array Function--    ");
+        System.out.println("The sifted array is : " + shift_array());
     }
 
     public static String shift_array () {
