@@ -48,7 +48,15 @@ public class Main {
             }else if (choice == 7){
                 // Check sorted
             }else if (choice == 8){
-                // Count primes
+            	int size=0;
+            	Scanner input = new Scanner (System.in);
+            	System.out.println("Please enter array size : ");
+            	size = input.nextInt();
+            	int Array[]= new int[size];
+            	for(int i=0;i<size;i++) {
+            		Array[i]=input.nextInt();
+            	}
+            	prime_num(Array);
             }else if (choice == 9){
                 // Reverse array
             }else if (choice == 10){
@@ -102,4 +110,23 @@ public class Main {
             shifted_arr += arr.get(i);
         return shifted_arr;
     }
+    public static void prime_num (int []arr) {
+	int counter=0,max=0;
+	for(int i=0;i<arr.length;i++) {
+		if(max<arr[i])
+			max=arr[i];
+	}
+	for(int i=0;i<arr.length;i++) {
+		for(int j=2;j<max;j++) {
+			if(arr[i]==1)
+				break;
+			else if(arr[i]%j==0 && arr[i]!=j)
+				break;
+			else if(j==max-1) {
+				counter++;
+			}
+		}
+	}
+	System.out.println("Prime number = "+counter);
+}
 }
