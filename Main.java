@@ -82,8 +82,18 @@ public class Main {
         System.out.println("    --Shift array Function--    ");
         System.out.println("The sifted array is : " + shift_array());
     }
-
-    public static String shift_array () {
+  public static void sort() 
+	    { 
+	        
+	        int[] arr = {4, 9, 0, 1, 6, 3, 205, 78}; 
+	  
+	        Arrays.sort(arr); 
+	  
+	        System.out.printf("Sorted arr[] : %s", 
+	                          Arrays.toString(arr)); 
+	    } 
+   
+ public static String shift_array () {
         String s = "";
         try {
             System.out.println("Please enter the array ... ");
