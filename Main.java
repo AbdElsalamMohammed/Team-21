@@ -35,7 +35,7 @@ public class Main {
                 // Most repeated value
             }
             else if (choice == 2){
-                // Sort
+                sort();
             }
             else if (choice == 3){
                 // Shuffle
