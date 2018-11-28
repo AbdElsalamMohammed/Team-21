@@ -53,6 +53,7 @@ public class Main {
                 // Reverse array
             }else if (choice == 10){
                 // Shift array
+                System.out.println(shift_array());
             }else if (choice == 11){
                 // Distinct array
             }else if (choice == 12){
@@ -72,14 +73,27 @@ public class Main {
             }
             else
                 break;  //exit
+            System.out.println("===========================================");
         }
     }
 
-    public ArrayList<String> shift_array (ArrayList<String> arr) {
-        ArrayList<String> shifted_arr = new ArrayList<>();
-        shifted_arr.add(arr.get(arr.size()-1));
+    public static String shift_array () {
+        String s = "";
+        try {
+            System.out.println("Please enter the array ... ");
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            s = br.readLine();
+        }
+        catch (Exception e){
+            System.out.println(e);}
+        char[] input = s.toCharArray();
+        ArrayList<String> arr = new ArrayList<>();
+        for (int i = 0; i < input.length; i++)
+            arr.add(input[i]+"");
+        String shifted_arr = "";
+        shifted_arr += arr.get(arr.size()-1);
         for (int i = 0; i < arr.size() - 1; i ++)
-            shifted_arr.add(arr.get(i));
+            shifted_arr += arr.get(i);
         return shifted_arr;
     }
 }
