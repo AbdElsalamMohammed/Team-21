@@ -38,6 +38,8 @@ public class SortArray {
 				sort();
 			} else if (choice == 3) {
 				// Shuffle
+				int[] arr={1,2,3,5,7,8,9,6};
+				shuffle(arr);
 			} else if (choice == 4) {
 				// Find the largest prime
 			} else if (choice == 5) {
