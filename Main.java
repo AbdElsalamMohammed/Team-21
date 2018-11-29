@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class SortArray {
+public class Main {
 
 	public static void main(String[] args) {
 		int choice = 0;
@@ -86,6 +86,9 @@ public class SortArray {
 		System.out.print("The Sorted  array is : ");
 		sort();
 		System.out.println("");
+		System.out.println("    --shuffle array Function--    ");
+		int[] shuffleArr={1,2,3,5,7,8,9,6};
+		shuffle(shuffleArr);
 	}
 
 	public static void sort() {
