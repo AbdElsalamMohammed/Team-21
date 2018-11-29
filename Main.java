@@ -152,4 +152,20 @@ public class SortArray {
 		}
 		System.out.println("Prime number = "+counter);
 	}
+	
+	/** shuffle*/
+	public static void shuffle(int[] array)
+    {
+        List<Integer>list = new ArrayList<>();
+        for(int i:array)
+            list.add(i);
+        Collections.shuffle(list);
+        //print shuffled array
+        System.out.print("shuffled array: ");
+        for(int i=0 ; i<list.size() ; i++) {
+            array[i] = list.get(i);
+            System.out.print(array[i]+" ");
+        }
+    }//end of shuffle
+
 }
