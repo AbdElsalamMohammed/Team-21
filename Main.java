@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class SortArray {
+public class Main {
 
 	public static void main(String[] args) {
 		int choice = 0;
@@ -84,6 +84,9 @@ public class SortArray {
 		System.out.print("The Sorted  array is : ");
 		sort();
 		System.out.println("");
+		System.out.println("    --Count prime number Function--    ");
+		Count_Prime();
+		System.out.println();
 	}
 
 	public static void sort() {
