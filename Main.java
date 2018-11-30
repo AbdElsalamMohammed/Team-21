@@ -84,6 +84,9 @@ public class SortArray {
 		System.out.print("The Sorted  array is : ");
 		sort();
 		System.out.println("");
+		System.out.println("    --Get Three Minimum numbers--    ");
+		
+		
 	}
 
 	public static void sort() {
@@ -151,5 +154,24 @@ public class SortArray {
 			}
 		}
 		System.out.println("Prime number = "+counter);
+	}
+	/*Get Three Minimum Numbers */
+	public  void getThreeMinNums ()
+	{
+		ArrayList<Integer> array = new ArrayList<>();
+		int size =0;
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter The size of the array ! ");
+		size=sc.nextInt();
+		System.out.println("Enter your Array ! ");
+		for(int i=0 ; i<size ; i++)
+			array.add(sc.nextInt());
+
+		Collections.sort(array);
+		for(int j=0 ; j<3 && j<size ; j++)
+			System.out.print(array.get(j)+"  ");
+		System.out.println();
+		
 	}
 }
