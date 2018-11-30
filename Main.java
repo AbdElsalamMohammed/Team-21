@@ -158,7 +158,7 @@ public class SortArray {
 		System.out.println("Prime number = "+counter);
 	}
 	/*Get Three Minimum Numbers */
-	public  void getThreeMinNums ()
+	public static void getThreeMinNums ()
 	{
 		ArrayList<Integer> array = new ArrayList<>();
 		int size =0;
