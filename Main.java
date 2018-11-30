@@ -50,6 +50,7 @@ public class SortArray {
 				// Count primes
 				Count_Prime();
 			} else if (choice == 9) {
+				reverseArray();
 				// Reverse array
 			} else if (choice == 10) {
 				// Shift array
