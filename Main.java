@@ -33,7 +33,7 @@ public class SortArray {
 				System.out.println(e);
 			}
 			if (choice == 1) {
-				// Most repeated value
+				most_rep();
 			} else if (choice == 2) {
 				sort();
 			} else if (choice == 3) {
@@ -85,7 +85,8 @@ public class SortArray {
 		sort();
 		System.out.println("The maxmam 3 number in array ");
 		Maxthreenumber();;
-		System.out.println("");
+		System.out.println("Most_repeated func");
+		most_rep();
 	}
 
 	public static void sort() {
@@ -155,8 +156,8 @@ public class SortArray {
 		}
 		System.out.println("Prime number = "+counter);
 	}
-//-------------------------------------------maxmam 3 number 
-	public static void Maxthreenumber(){ 
+//-------------------------------------------maxmam 3 number
+	public static void Maxthreenumber(){
 		ArrayList<Integer> numbers = new ArrayList<Integer>();
 		int num = 0;
 		System.out.print("Enter numbers of elements you want in array:");
@@ -176,13 +177,67 @@ public class SortArray {
 		System.out.println("The lasrgest 3 number in arr are "+ numbers.get(numbers.size()-1) +"  "+ numbers.get(numbers.size()-2) +"  "+ numbers.get(numbers.size()-3));
 		}
 
-		
-		
-		
-		
-		
-	
-	
-	
-	
+
+    public static class char_data
+    {
+        String  symbol="";
+        int counter=0;
+    }
+
+    public static int search (String  c , Vector<char_data> V)
+    {
+
+        for (int j=0 ; j<V.size(); j++)
+        {
+            if(c.equals(V.get(j).symbol))
+                return j;
+        }
+        return -1;
+    }
+
+    public static void most_rep()
+    {
+        Vector <char_data> Vec=new Vector<char_data>();
+        Scanner read= new Scanner ( System.in);
+        System.out.println("Enter your text");
+        String input=read.nextLine();
+        for(int i=0 ; i<input.length() ; i++)
+        { //System.out.println(i);
+            String temp="";
+            temp=""+input.charAt(i);
+            int s=search(temp , Vec);
+            if(s==-1)
+            {
+                char_data n= new char_data();
+                n.symbol=""+input.charAt(i);
+                n.counter=1;
+                Vec.addElement(n);
+            }
+
+            else
+            {
+                Vec.get(s).counter=(Vec.get(s).counter+1);
+            }
+        }
+
+        char_data most=new char_data();
+        if(Vec.size()!=0) {most.symbol=Vec.get(0).symbol;most.counter=Vec.get(0).counter;}
+        for (int t=0 ; t<Vec.size();t++)
+        {
+            if(Vec.get(t).counter>most.counter) {most.symbol=Vec.get(t).symbol;most.counter=Vec.get(t).counter;}
+
+        }
+
+        if(Vec.size()!=0) System.out.println("most repeated value: "+ most.symbol);
+
+    }
+
+
+
+
+
+
+
+
+
 }
