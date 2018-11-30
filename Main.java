@@ -152,4 +152,15 @@ public class SortArray {
 		}
 		System.out.println("Prime number = "+counter);
 	}
+//-------------------------------------------maxmam 3 number 
+
+		
+		
+		
+		
+		
+	
+	
+	
+	
 }
