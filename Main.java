@@ -41,7 +41,7 @@ public class SortArray {
 			} else if (choice == 4) {
 				// Find the largest prime
 			} else if (choice == 5) {
-				// Find the smallest prime
+			        smallest_prime();
 			} else if (choice == 6) {
 				// Check palindrome
 			} else if (choice == 7) {
@@ -90,6 +90,13 @@ public class SortArray {
 		
 		
 		System.out.println("The maxmam 3 number in array ");
+
+		Maxthreenumber();
+		System.out.println("");
+                System.out.println("The Smallest Prime in array ");
+		smallest_prime();
+		System.out.println("");
+
 		Maxthreenumber();;
 		System.out.println("Most_repeated func");
 		most_rep();
@@ -202,7 +209,45 @@ public class SortArray {
 		Collections.sort(numbers);
 		System.out.println("The lasrgest 3 number in arr are "+ numbers.get(numbers.size()-1) +"  "+ numbers.get(numbers.size()-2) +"  "+ numbers.get(numbers.size()-3));
 		}
+//------------------------------------------------------ Smallest prime 
+ public static void smallest_prime () 
+   {
+    ArrayList<Integer> Arr = new ArrayList();
+    ArrayList<Integer> Prim_Arr = new ArrayList();
+    Scanner input = new Scanner(System.in);
+    int x;
+    int temp;
+    boolean prime;    
+     System.out.println("Enter Your Array : ");
+    for (int i = 0; i < 5; i++) 
+        {
+            x = input.nextInt();
+            Arr.add(x);
+        }
+        for (int i = 0; i < Arr.size(); i++) 
+        {     prime = true ;
+            if (Arr.get(i) == 2) {
+                Prim_Arr.add(Arr.get(i));
+                continue ;}
 
+        for (int j = 2; j < Arr.get(i); j++) 
+        {  if (Arr.get(i) % j == 0) 
+                { prime = false ;
+                    break;}
+                 }
+            if(prime)
+                Prim_Arr.add(Arr.get(i));
+        }
+        int min;
+        min = Prim_Arr.get(0);
+        for (int i = 0; i < Prim_Arr.size(); i++)
+        {
+            if (min > Prim_Arr.get(i) )
+                min = Prim_Arr.get(i);
+        }
+                System.out.println("Mini Prime: " +min);
+        }
+   
 
     public static class char_data
     {
@@ -259,3 +304,4 @@ public class SortArray {
     }
 
 }
+
