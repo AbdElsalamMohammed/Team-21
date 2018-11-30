@@ -152,4 +152,53 @@ public class SortArray {
 		}
 		System.out.println("Prime number = "+counter);
 	}
+
+
+
+        /*********************** reverse array ******************/
+        
+        
+    public static void reverseArray() {
+
+        System.out.print("enter array size that you want to reverse it : ");
+        Scanner s = new Scanner(System.in);
+
+        try {
+            int arraySize = s.nextInt();
+            int[] array = new int[arraySize];
+            for (int i = 0; i < arraySize; i++) {
+                System.out.print("enter value in index " + (i) + " : ");
+                array[i] = s.nextInt();
+            }
+
+            System.out.println("array before rerversing");
+            for (int i = 0; i < arraySize; i++) {
+                System.out.print(array[i] + "\t");
+            }
+
+            // reversing array
+            for (int i = 0; i < array.length / 2; i++) {
+                int temp = array[i];
+                array[i] = array[array.length - i - 1];
+                array[array.length - i - 1] = temp;
+            }
+
+            System.out.println("\narray after rerversing");
+            for (int i = 0; i < arraySize; i++) {
+                System.out.print(array[i] + "\t");
+            }
+        } catch (Exception e) {
+            System.out.println("sorry you have enter incorrect inputs.\n" + "hint:enter Integer values.\n");
+
+            //System.out.println(e.getMessage());
+            reverseArray();
+            System.out.println();
+        }
+
+    }
+
+
+
+
+
 }
