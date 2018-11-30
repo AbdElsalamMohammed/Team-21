@@ -83,6 +83,8 @@ public class SortArray {
 		System.out.println("    --Sort array Function--    ");
 		System.out.print("The Sorted  array is : ");
 		sort();
+		System.out.println("The maxmam 3 number in array ");
+		Maxthreenumber();;
 		System.out.println("");
 	}
 
@@ -103,6 +105,7 @@ public class SortArray {
 		for (int counter : arr) {
 			System.out.print(counter + " ");
 		}
+		System.out.println();
 	}
 
 	public static String shift_array() {
