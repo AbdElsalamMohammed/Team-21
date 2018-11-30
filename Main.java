@@ -84,6 +84,11 @@ public class SortArray {
 		System.out.println("    --Sort array Function--    ");
 		System.out.print("The Sorted  array is : ");
 		sort();
+
+		/*********************** reverse array ******************/
+                System.out.println("    --reverse array Function--    ");
+		reverseArray();
+
 		System.out.println("");
 	}
 
