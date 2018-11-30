@@ -86,6 +86,7 @@ public class SortArray {
 		sort();
 		System.out.println("");
 		System.out.println("    --Get Three Minimum numbers--    ");
+		getThreeMinNums ();
 		
 		
 	}
