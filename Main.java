@@ -57,7 +57,7 @@ public class SortArray {
 			} else if (choice == 11) {
 				// Distinct array
 			} else if (choice == 12) {
-				// Get the maximum 3 numbers
+				Maxthreenumber();
 			} else if (choice == 13) {
 				// Get the minimum 3 numbers
 			} else if (choice == 14) {
@@ -83,6 +83,8 @@ public class SortArray {
 		System.out.println("    --Sort array Function--    ");
 		System.out.print("The Sorted  array is : ");
 		sort();
+		System.out.println("The maxmam 3 number in array ");
+		Maxthreenumber();;
 		System.out.println("");
 	}
 
@@ -103,6 +105,7 @@ public class SortArray {
 		for (int counter : arr) {
 			System.out.print(counter + " ");
 		}
+		System.out.println();
 	}
 
 	public static String shift_array() {
@@ -152,4 +155,34 @@ public class SortArray {
 		}
 		System.out.println("Prime number = "+counter);
 	}
+//-------------------------------------------maxmam 3 number 
+	public static void Maxthreenumber(){ 
+		ArrayList<Integer> numbers = new ArrayList<Integer>();
+		int num = 0;
+		System.out.print("Enter numbers of elements you want in array:");
+		Scanner input= new Scanner(System.in);
+		num = input.nextInt();
+		while(num<3)
+		{
+			System.out.println("Numbers should be atleat 3 number ");
+			System.out.println("Enter how many number you will Enter ?");
+			num= input.nextInt();
+		}
+		System.out.println("Enter all the elements:");
+		for (int i = 0; i < num; i++) {
+			numbers.add(input.nextInt());
+		}
+		Collections.sort(numbers);
+		System.out.println("The lasrgest 3 number in arr are "+ numbers.get(numbers.size()-1) +"  "+ numbers.get(numbers.size()-2) +"  "+ numbers.get(numbers.size()-3));
+		}
+
+		
+		
+		
+		
+		
+	
+	
+	
+	
 }
