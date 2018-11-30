@@ -153,6 +153,25 @@ public class SortArray {
 		System.out.println("Prime number = "+counter);
 	}
 //-------------------------------------------maxmam 3 number 
+	public static void Maxthreenumber(){ 
+		ArrayList<Integer> numbers = new ArrayList<Integer>();
+		int num = 0;
+		System.out.print("Enter numbers of elements you want in array:");
+		Scanner input= new Scanner(System.in);
+		num = input.nextInt();
+		while(num<3)
+		{
+			System.out.println("Numbers should be atleat 3 number ");
+			System.out.println("Enter how many number you will Enter ?");
+			num= input.nextInt();
+		}
+		System.out.println("Enter all the elements:");
+		for (int i = 0; i < num; i++) {
+			numbers.add(input.nextInt());
+		}
+		Collections.sort(numbers);
+		System.out.println("The lasrgest 3 number in arr are "+ numbers.get(numbers.size()-1) +"  "+ numbers.get(numbers.size()-2) +"  "+ numbers.get(numbers.size()-3));
+		}
 
 		
 		
