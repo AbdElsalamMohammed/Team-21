@@ -60,6 +60,7 @@ public class SortArray {
 				// Get the maximum 3 numbers
 			} else if (choice == 13) {
 				// Get the minimum 3 numbers
+				getThreeMinNums ();
 			} else if (choice == 14) {
 				// Get average
 			} else if (choice == 15) {
