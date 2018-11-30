@@ -60,6 +60,7 @@ public class SortArray {
 				Maxthreenumber();
 			} else if (choice == 13) {
 				// Get the minimum 3 numbers
+				getThreeMinNums ();
 			} else if (choice == 14) {
 				// Get average
 			} else if (choice == 15) {
@@ -83,6 +84,11 @@ public class SortArray {
 		System.out.println("    --Sort array Function--    ");
 		System.out.print("The Sorted  array is : ");
 		sort();
+		System.out.println("");
+		System.out.println("    --Get Three Minimum numbers--    ");
+		getThreeMinNums ();
+		
+		
 		System.out.println("The maxmam 3 number in array ");
 		Maxthreenumber();;
 		System.out.println("Most_repeated func");
@@ -156,6 +162,26 @@ public class SortArray {
 		}
 		System.out.println("Prime number = "+counter);
 	}
+	/*Get Three Minimum Numbers */
+	public static void getThreeMinNums ()
+	{
+		ArrayList<Integer> array = new ArrayList<>();
+		int size =0;
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter The size of the array ! ");
+		size=sc.nextInt();
+		System.out.println("Enter your Array ! ");
+		for(int i=0 ; i<size ; i++)
+			array.add(sc.nextInt());
+
+		Collections.sort(array);
+		for(int j=0 ; j<3 && j<size ; j++)
+			System.out.print(array.get(j)+"  ");
+		System.out.println();
+		
+	}
+
 //-------------------------------------------maxmam 3 number
 	public static void Maxthreenumber(){
 		ArrayList<Integer> numbers = new ArrayList<Integer>();
@@ -231,13 +257,5 @@ public class SortArray {
         if(Vec.size()!=0) System.out.println("most repeated value: "+ most.symbol);
 
     }
-
-
-
-
-
-
-
-
 
 }
