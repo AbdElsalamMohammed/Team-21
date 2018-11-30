@@ -57,7 +57,7 @@ public class SortArray {
 			} else if (choice == 11) {
 				// Distinct array
 			} else if (choice == 12) {
-				// Get the maximum 3 numbers
+				Maxthreenumber();
 			} else if (choice == 13) {
 				// Get the minimum 3 numbers
 			} else if (choice == 14) {
