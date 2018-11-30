@@ -46,6 +46,11 @@ public class SortArray {
 				// Check palindrome
 			} else if (choice == 7) {
 				// Check sorted
+				System.out.println("..........fun CheckSort..........");
+				CheckSort();
+				System.out.println("...............Done..............");
+				
+				
 			} else if (choice == 8) {
 				// Count primes
 				Count_Prime();
@@ -84,6 +89,8 @@ public class SortArray {
 		System.out.print("The Sorted  array is : ");
 		sort();
 		System.out.println("");
+		System.out.println("..........fun CheckSort..........");
+		CheckSort();
 	}
 
 	public static void sort() {
@@ -151,5 +158,30 @@ public class SortArray {
 			}
 		}
 		System.out.println("Prime number = "+counter);
+	}
+	public static void CheckSort() {
+		boolean flag = false ; 
+		int size=0 , element =0 ;
+		System.out.println("Please enter the size of your array ^_^ ");
+		Scanner input = new Scanner (System.in);
+		size=input.nextInt();
+		int arr[] = new int [size];
+		System.out.println("Please enter the " + size + " element of your array ^_^ ");
+		for(int i=0 ; i<size ; i++)
+		{   element =input.nextInt();
+			arr[i]= element ; }
+		
+		for(int i = 0; i < arr.length-1; i ++)
+		{  if (arr[i] < arr[i+1]) 
+	            flag= true;
+	       else 
+	        	{flag= false; break;}
+		}
+		
+		if (flag==true)
+			System.out.println(flag + "...the array is sorted ");
+		else 
+			System.out.println(flag + "...the array isn't sorted ");	
+		
 	}
 }
