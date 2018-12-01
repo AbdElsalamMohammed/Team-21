@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class SortArray {
 
 	public static void main(String[] args) {
 		int choice = 0;
@@ -42,7 +42,7 @@ public class Main {
 			} else if (choice == 4) {
 				// Find the largest prime
 			} else if (choice == 5) {
-				// Find the smallest prime
+			        smallest_prime();
 			} else if (choice == 6) {
 				// Check palindrome
 			} else if (choice == 7) {
@@ -88,13 +88,20 @@ public class Main {
 		System.out.println("");
 		System.out.println("    --Get Three Minimum numbers--    ");
 		getThreeMinNums ();
-
-
+		
+		
 		System.out.println("The maxmam 3 number in array ");
-		Maxthreenumber();;
+
+		Maxthreenumber();
+		System.out.println("");
+                System.out.println("The Smallest Prime in array ");
+		smallest_prime();
+		System.out.println("");
+
+		Maxthreenumber();
 		System.out.println("Most_repeated func");
 		most_rep();
-		System.out.println("--shuffle a given array--");
+		System.out.println("--shuffle array function--");
 		shuffle();
 	}
 
@@ -137,17 +144,17 @@ public class Main {
 			shifted_arr += arr.get(i);
 		return shifted_arr;
 	}
-	//--------------------------------------------count prime number
+//--------------------------------------------count prime number
 	public static void Count_Prime () {
 		int size=0,counter=0,max=0;
-		Scanner input = new Scanner (System.in);
-		System.out.println("Please enter array size : ");
-		size = input.nextInt();
-		int Array[]= new int[size];
-		System.out.println("Please enter array "+size+" elements : ");
-		for(int i=0;i<size;i++) {
-			Array[i]=input.nextInt();
-		}
+    	Scanner input = new Scanner (System.in);
+    	System.out.println("Please enter array size : ");
+    	size = input.nextInt();
+    	int Array[]= new int[size];
+    	System.out.println("Please enter array "+size+" elements : ");
+    	for(int i=0;i<size;i++) {
+    		Array[i]=input.nextInt();
+    	}
 		for(int i=0;i<Array.length;i++) {
 			if(max<Array[i])
 				max=Array[i];
@@ -182,10 +189,10 @@ public class Main {
 		for(int j=0 ; j<3 && j<size ; j++)
 			System.out.print(array.get(j)+"  ");
 		System.out.println();
-
+		
 	}
 
-	//-------------------------------------------maxmam 3 number
+//-------------------------------------------maxmam 3 number
 	public static void Maxthreenumber(){
 		ArrayList<Integer> numbers = new ArrayList<Integer>();
 		int num = 0;
@@ -204,83 +211,122 @@ public class Main {
 		}
 		Collections.sort(numbers);
 		System.out.println("The lasrgest 3 number in arr are "+ numbers.get(numbers.size()-1) +"  "+ numbers.get(numbers.size()-2) +"  "+ numbers.get(numbers.size()-3));
-	}
-
-
-	public static class char_data
-	{
-		String  symbol="";
-		int counter=0;
-	}
-
-	public static int search (String  c , Vector<char_data> V)
-	{
-
-		for (int j=0 ; j<V.size(); j++)
-		{
-			if(c.equals(V.get(j).symbol))
-				return j;
 		}
-		return -1;
+//------------------------------------------------------ Smallest prime 
+ public static void smallest_prime () 
+   {
+    ArrayList<Integer> Arr = new ArrayList();
+    ArrayList<Integer> Prim_Arr = new ArrayList();
+    Scanner input = new Scanner(System.in);
+    int x;
+    int temp;
+    boolean prime;    
+     System.out.println("Enter Your Array : ");
+    for (int i = 0; i < 5; i++) 
+        {
+            x = input.nextInt();
+            Arr.add(x);
+        }
+        for (int i = 0; i < Arr.size(); i++) 
+        {     prime = true ;
+            if (Arr.get(i) == 2) {
+                Prim_Arr.add(Arr.get(i));
+                continue ;}
+
+        for (int j = 2; j < Arr.get(i); j++) 
+        {  if (Arr.get(i) % j == 0) 
+                { prime = false ;
+                    break;}
+                 }
+            if(prime)
+                Prim_Arr.add(Arr.get(i));
+        }
+        int min;
+        min = Prim_Arr.get(0);
+        for (int i = 0; i < Prim_Arr.size(); i++)
+        {
+            if (min > Prim_Arr.get(i) )
+                min = Prim_Arr.get(i);
+        }
+                System.out.println("Mini Prime: " +min);
+        }
+   
+
+    public static class char_data
+    {
+        String  symbol="";
+        int counter=0;
+    }
+
+    public static int search (String  c , Vector<char_data> V)
+    {
+
+        for (int j=0 ; j<V.size(); j++)
+        {
+            if(c.equals(V.get(j).symbol))
+                return j;
+        }
+        return -1;
+    }
+
+    public static void most_rep()
+    {
+        Vector <char_data> Vec=new Vector<char_data>();
+        Scanner read= new Scanner ( System.in);
+        System.out.println("Enter your text");
+        String input=read.nextLine();
+        for(int i=0 ; i<input.length() ; i++)
+        { //System.out.println(i);
+            String temp="";
+            temp=""+input.charAt(i);
+            int s=search(temp , Vec);
+            if(s==-1)
+            {
+                char_data n= new char_data();
+                n.symbol=""+input.charAt(i);
+                n.counter=1;
+                Vec.addElement(n);
+            }
+
+            else
+            {
+                Vec.get(s).counter=(Vec.get(s).counter+1);
+            }
+        }
+
+        char_data most=new char_data();
+        if(Vec.size()!=0) {most.symbol=Vec.get(0).symbol;most.counter=Vec.get(0).counter;}
+        for (int t=0 ; t<Vec.size();t++)
+        {
+            if(Vec.get(t).counter>most.counter) {most.symbol=Vec.get(t).symbol;most.counter=Vec.get(t).counter;}
+
+        }
+
+        if(Vec.size()!=0) System.out.println("most repeated value: "+ most.symbol);
+
+    }
+	
+/** shuffle*/
+public static void shuffle()
+{
+	Scanner sc=new Scanner(System.in);
+	String s=sc.nextLine();
+	String[] integerStrings = s.split(" ");
+	int[] array= new int[integerStrings.length];
+	for (int i = 0; i < array.length; i++)
+		array[i] = Integer.parseInt(integerStrings[i]);
+
+	List<Integer>list = new ArrayList<>();
+	for(int i:array)
+		list.add(i);
+	Collections.shuffle(list);
+	//print shuffled array
+	System.out.print("shuffled array: ");
+	for(int i=0 ; i<list.size() ; i++) {
+		array[i] = list.get(i);
+		System.out.print(array[i]+" ");
 	}
+	System.out.println();
+}//end of shuffle
 
-	public static void most_rep()
-	{
-		Vector <char_data> Vec=new Vector<char_data>();
-		Scanner read= new Scanner ( System.in);
-		System.out.println("Enter your text");
-		String input=read.nextLine();
-		for(int i=0 ; i<input.length() ; i++)
-		{ //System.out.println(i);
-			String temp="";
-			temp=""+input.charAt(i);
-			int s=search(temp , Vec);
-			if(s==-1)
-			{
-				char_data n= new char_data();
-				n.symbol=""+input.charAt(i);
-				n.counter=1;
-				Vec.addElement(n);
-			}
-
-			else
-			{
-				Vec.get(s).counter=(Vec.get(s).counter+1);
-			}
-		}
-
-		char_data most=new char_data();
-		if(Vec.size()!=0) {most.symbol=Vec.get(0).symbol;most.counter=Vec.get(0).counter;}
-		for (int t=0 ; t<Vec.size();t++)
-		{
-			if(Vec.get(t).counter>most.counter) {most.symbol=Vec.get(t).symbol;most.counter=Vec.get(t).counter;}
-
-		}
-
-		if(Vec.size()!=0) System.out.println("most repeated value: "+ most.symbol);
-
-	}
-
-	/** shuffle*/
-	public static void shuffle()
-	{
-		Scanner sc=new Scanner(System.in);
-		String s=sc.nextLine();
-		String[] integerStrings = s.split(" ");
-		int[] array= new int[integerStrings.length];
-		for (int i = 0; i < array.length; i++)
-			array[i] = Integer.parseInt(integerStrings[i]);
-
-		List<Integer>list = new ArrayList<>();
-		for(int i:array)
-			list.add(i);
-		Collections.shuffle(list);
-		//print shuffled array
-		System.out.print("shuffled array: ");
-		for(int i=0 ; i<list.size() ; i++) {
-			array[i] = list.get(i);
-			System.out.print(array[i]+" ");
-		}
-		System.out.println();
-	}//end of shuffle
-}//end of class Main
+}//end of class main
