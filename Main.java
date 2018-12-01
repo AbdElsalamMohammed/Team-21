@@ -434,6 +434,31 @@ public class Main {
 
     }
 
-	
+
+//-------Zero if less than Zero--------
+public static void ZeroIfLessThanZero()
+{
+	int arr[];
+		@SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Enter array size: ");
+		int size = scanner.nextInt();
+		arr = new int[size];
+		System.out.print("Enter the array: ");
+		for(int i=0;i<arr.length;i++)
+		{
+			arr[i]=scanner.nextInt();
+			if(arr[i]<0)
+			{
+				arr[i]+= -1*arr[i];
+			}
+		} 
+		System.out.print("The new array is: ");
+		for(int i=0;i<arr.length;i++)
+		{
+			System.out.print(arr[i]+" ");
+		}
+}//--------End of Zero if less than Zero-----------
+
 }//end of class main
 
