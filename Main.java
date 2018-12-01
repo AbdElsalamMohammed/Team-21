@@ -304,4 +304,16 @@ public class SortArray {
     }
 
 }
-
+// largest prime
+    public static int maximumprime(int[] arr){
+        int max=0;
+        for(int i=2;i<arr.length;i++){
+            for(int j=2;j<arr[i];j++ ){
+                if(arr[i]%j!=0 &&arr[i] >max){
+                   max=arr[i];
+                }       
+            }
+        }
+        return max;
+    }
+    
