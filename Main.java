@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class SortArray {
+public class Main {
 
 	public static void main(String[] args) {
 		int choice = 0;
@@ -103,6 +103,7 @@ public class SortArray {
 		most_rep();
 		System.out.println("--shuffle array function--");
 		shuffle();
+
 	}
 
 	public static void sort() {
