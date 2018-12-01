@@ -110,7 +110,22 @@ public class Main {
         System.out.println("    --reverse array Function--    ");
         reverseArray();
 
+
+		System.out.println("    --Count prime number Function--    ");
+		Count_Prime();
+		System.out.println();
+
+
+		System.out.println("..........fun CheckSort..........");
+		CheckSort();
+		System.out.println("    --Get Three Minimum numbers--    ");
+		getThreeMinNums ();
+		
+		
+		System.out.println("The maxmam 3 number in array ");
+
     }
+
 
     public static void sort() {
 
