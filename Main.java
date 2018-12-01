@@ -80,6 +80,7 @@ public class Main {
 
             } else if (choice == 16) {
                 // Return only primes
+				Return_only_primes();
             } else if (choice == 17) {
                 // Zero if less than zero
             } else if (choice == 18) {
