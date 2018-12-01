@@ -221,9 +221,13 @@ public class Main {
     Scanner input = new Scanner(System.in);
     int x;
     int temp;
-    boolean prime;    
+    boolean prime;
+    System.out.println("Enter Your Array size : ");
+      Scanner sizee = new Scanner(System.in);
+      int size ;
+      size=sizee.nextInt();    
      System.out.println("Enter Your Array : ");
-    for (int i = 0; i < 5; i++) 
+    for (int i = 0; i < size; i++) 
         {
             x = input.nextInt();
             Arr.add(x);
