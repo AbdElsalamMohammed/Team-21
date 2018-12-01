@@ -93,6 +93,8 @@ public class Main {
 		Maxthreenumber();;
 		System.out.println("Most_repeated func");
 		most_rep();
+		System.out.println("--shuffle a given array--");
+		shuffle();
 	}
 
 	public static void sort() {
