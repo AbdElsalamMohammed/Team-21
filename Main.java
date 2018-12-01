@@ -42,6 +42,7 @@ public class Main {
                 shuffle();
             } else if (choice == 4) {
                 // Find the largest prime
+                maximumprime();
             } else if (choice == 5) {
                 smallest_prime();
             } else if (choice == 6) {
@@ -419,6 +420,32 @@ public class Main {
 
     }
 
+//<<<<<<< maximumprime
+
+
+public static void maximumprime(){
+        ArrayList<Integer> arr = new ArrayList<>();
+	int size =0;
+	int max=0;
+        Scanner sc = new Scanner(System.in);
+	System.out.println("Enter The size of the array ! ");
+	size=sc.nextInt();
+	System.out.println("Enter your Array ! ");
+	for(int i=0 ; i<size ; i++)
+		arr.add(sc.nextInt());
+        for(int i=2;i<size;i++){
+            for(int j=2;j<arr.get(i);j++ ){
+                if(arr.get(i)%j!=0 && arr.get(i) >max){
+                   max=arr.get(i);
+                }       
+            }
+        }
+        
+        System.out.println(max);
+}
+    
+
 	
 }//end of class main
 
+//>>>>>>> master
