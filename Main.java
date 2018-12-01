@@ -52,6 +52,7 @@ public class Main {
 				Count_Prime();
 			} else if (choice == 9) {
 				// Reverse array
+				reverseArray();
 			} else if (choice == 10) {
 				// Shift array
 				System.out.println("The sifted array is : " + shift_array());
