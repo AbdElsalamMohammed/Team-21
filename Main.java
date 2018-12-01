@@ -6,9 +6,10 @@ public class Main {
 	public static void main(String[] args) {
 		int choice = 0;
 		while (true) {
+
 			System.out.println(" 1- Most repeated value");
 			System.out.println(" 2- Sort  ");
-			System.out.println(" 3- Shuffle");
+			System.out.println(" 3- Shuffle ");
 			System.out.println(" 4- Find the largest prime");
 			System.out.println(" 5- Find the smallest prime");
 			System.out.println(" 6- Check palindrome");
@@ -84,44 +85,7 @@ public class Main {
 		}
 	}
 
-	public static void  Max_3_num()
-    {
-        int num_of_elements;
-        int temp;
-        int smalest=0;
-        Vector <Integer> nums = new Vector<Integer>();
-        Scanner read= new Scanner(System.in);
-        System.out.println("PLZ Enter #elements");
-        num_of_elements=read.nextInt();
 
-        for(int i=0 ; i< num_of_elements; i++)
-        {  System.out.println("PLZ Enter one num: ");
-            temp=read.nextInt();
-
-            if(i==0)
-            {nums.addElement(temp);smalest=temp;}
-            else if (i==1&&!nums.contains(temp))  {nums.addElement(temp); if(temp<nums.get(0)) smalest= temp;}
-            else if (i==2&&!nums.contains(temp))  {nums.addElement(temp); if (temp<smalest)smalest=temp;}
-            else if(temp>smalest&&!nums.contains(temp))
-            {
-                nums.set(nums.indexOf(smalest),temp);
-                System.out.println(nums.toString());
-                smalest=temp;
-                if(smalest > nums.get(0)) smalest=nums.get(0);
-                if(smalest > nums.get(1)) smalest=nums.get(1);
-                if(smalest > nums.get(2)) smalest=nums.get(2);
-            }
-
-        }
-
-       //this loop for print: Max o(3)
-       for(int o=0; o<nums.size(); o++) System.out.println(nums.get(o));
-
-
-
-
-
-    }
 	public static void execute_all() {
 		System.out.println("    --Shift array Function--    ");
 		System.out.println("The sifted array is : " + shift_array());
