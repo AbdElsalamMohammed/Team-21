@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class SortArray {
+public class Main {
 
 	public static void main(String[] args) {
 		int choice = 0;
@@ -38,6 +38,7 @@ public class SortArray {
 				sort();
 			} else if (choice == 3) {
 				// Shuffle
+				shuffle();
 			} else if (choice == 4) {
 				// Find the largest prime
 			} else if (choice == 5) {
@@ -97,9 +98,12 @@ public class SortArray {
 		smallest_prime();
 		System.out.println("");
 
-		Maxthreenumber();;
+		Maxthreenumber();
 		System.out.println("Most_repeated func");
 		most_rep();
+		System.out.println("--shuffle array function--");
+		shuffle();
+
 	}
 
 	public static void sort() {
@@ -302,6 +306,28 @@ public class SortArray {
         if(Vec.size()!=0) System.out.println("most repeated value: "+ most.symbol);
 
     }
+	
+/** shuffle*/
+public static void shuffle()
+{
+	Scanner sc=new Scanner(System.in);
+	String s=sc.nextLine();
+	String[] integerStrings = s.split(" ");
+	int[] array= new int[integerStrings.length];
+	for (int i = 0; i < array.length; i++)
+		array[i] = Integer.parseInt(integerStrings[i]);
 
-}
+	List<Integer>list = new ArrayList<>();
+	for(int i:array)
+		list.add(i);
+	Collections.shuffle(list);
+	//print shuffled array
+	System.out.print("shuffled array: ");
+	for(int i=0 ; i<list.size() ; i++) {
+		array[i] = list.get(i);
+		System.out.print(array[i]+" ");
+	}
+	System.out.println();
+}//end of shuffle
 
+}//end of class main
