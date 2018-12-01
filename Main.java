@@ -3,6 +3,7 @@ import java.io.*;
 
 public class Main {
 
+
     public static void main(String[] args) {
         int choice = 0;
         while (true) {
@@ -203,6 +204,33 @@ public class Main {
 
     }
 
+	
+	public static void CheckSort() {
+		boolean flag = false ; 
+		int size=0 , element =0 ;
+		System.out.println("Please enter the size of your array ^_^ ");
+		Scanner input = new Scanner (System.in);
+		size=input.nextInt();
+		int arr[] = new int [size];
+		System.out.println("Please enter the " + size + " element of your array ^_^ ");
+		for(int i=0 ; i<size ; i++)
+		{   element =input.nextInt();
+			arr[i]= element ; }
+		
+		for(int i = 0; i < arr.length-1; i ++)
+		{  if (arr[i] < arr[i+1]) 
+	            flag= true;
+	       else 
+	        	{flag= false; break;}
+		}
+		
+		if (flag==true)
+			System.out.println(flag + "...the array is sorted ");
+		else 
+			System.out.println(flag + "...the array isn't sorted ");	
+		
+	}
+
 //-------------------------------------------maxmam 3 number
     public static void Maxthreenumber() {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
@@ -224,15 +252,21 @@ public class Main {
     }
 //------------------------------------------------------ Smallest prime 
 
-    public static void smallest_prime() {
-        ArrayList<Integer> Arr = new ArrayList();
-        ArrayList<Integer> Prim_Arr = new ArrayList();
-        Scanner input = new Scanner(System.in);
-        int x;
-        int temp;
-        boolean prime;
-        System.out.println("Enter Your Array : ");
-        for (int i = 0; i < 5; i++) {
+ public static void smallest_prime () 
+   {
+    ArrayList<Integer> Arr = new ArrayList();
+    ArrayList<Integer> Prim_Arr = new ArrayList();
+    Scanner input = new Scanner(System.in);
+    int x;
+    int temp;
+    boolean prime;
+    System.out.println("Enter Your Array size : ");
+      Scanner sizee = new Scanner(System.in);
+      int size ;
+      size=sizee.nextInt();    
+     System.out.println("Enter Your Array : ");
+    for (int i = 0; i < size; i++) 
+        {
             x = input.nextInt();
             Arr.add(x);
         }
@@ -385,4 +419,6 @@ public class Main {
 
     }
 
-}
+	
+}//end of class main
+
