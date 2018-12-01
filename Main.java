@@ -105,6 +105,9 @@ public class Main {
 		System.out.println("--shuffle array function--");
 		shuffle();
 
+		System.out.println("    --reverse array Function--    ");
+		reverseArray();
+
 	}
 
 	public static void sort() {
