@@ -2,8 +2,6 @@ import java.util.*;
 import java.io.*;
 
 public class Main {
-
-
     public static void main(String[] args) {
         int choice = 0;
         while (true) {
@@ -59,6 +57,15 @@ public class Main {
                 System.out.println("The sifted array is : " + shift_array());
             } else if (choice == 11) {
                 // Distinct array
+                ArrayList<Integer> dis=new ArrayList<Integer>();
+				        System.out.println(" enter array size   ");
+				        int num = 0;
+				        Scanner s = new Scanner(System.in);
+				        num = s.nextInt();
+				        System.out.println("Enter all the elements:");
+				        for (int i = 0; i < num; i++) {
+			        		dis.add(s.nextInt());
+			      		  Distinct(dis);}
             } else if (choice == 12) {
                 Maxthreenumber();
             } else if (choice == 13) {
@@ -458,7 +465,36 @@ public static void ZeroIfLessThanZero()
 		{
 			System.out.print(arr[i]+" ");
 		}
-}//--------End of Zero if less than Zero-----------
+  }//--------End of Zero if less than Zero-----------
 
+	public static ArrayList<Integer> Distinct(ArrayList<Integer> arr1)
+	{
+		int n=arr1.size();
+		ArrayList<Integer> Result=new ArrayList<Integer>();
+		boolean Noprint=false;
+		for(int i=0;i<n;i++)
+		{
+			int j;
+			if(i==0)
+			{
+				Result.add(arr1.get(i));
+			}
+			for(j=0; j<i ;j++)
+			{
+				if(arr1.get(i)==arr1.get(j))
+					break;
+				if(j+1==i)
+					Noprint=true;
+			}
+			if(Noprint==true)
+			{
+				Result.add(arr1.get(i));
+			}
+			Noprint=false;
+		}
+		ArrayList<Integer> arr2=Result;
+		System.out.println(arr2);
+		
+		return arr2;
+	}
 }//end of class main
-
