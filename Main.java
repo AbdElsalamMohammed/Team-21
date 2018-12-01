@@ -6,6 +6,7 @@ public class SortArray {
 	public static void main(String[] args) {
 		int choice = 0;
 		while (true) {
+
 			System.out.println(" 1- Most repeated value");
 			System.out.println(" 2- Sort  ");
 			System.out.println(" 3- Shuffle");
