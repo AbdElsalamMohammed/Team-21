@@ -9,7 +9,7 @@ public class SortArray {
 
 			System.out.println(" 1- Most repeated value");
 			System.out.println(" 2- Sort  ");
-			System.out.println(" 3- Shuffle");
+			System.out.println(" 3- Shuffle ");
 			System.out.println(" 4- Find the largest prime");
 			System.out.println(" 5- Find the smallest prime");
 			System.out.println(" 6- Check palindrome");
