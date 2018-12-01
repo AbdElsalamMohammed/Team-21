@@ -38,6 +38,7 @@ public class Main {
 				sort();
 			} else if (choice == 3) {
 				// Shuffle
+				shuffle();
 			} else if (choice == 4) {
 				// Find the largest prime
 			} else if (choice == 5) {
