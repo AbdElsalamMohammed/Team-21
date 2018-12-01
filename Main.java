@@ -75,6 +75,9 @@ public class Main {
                 // Get average
             } else if (choice == 15) {
                 // Get median
+                int a[] = { 1, 3, 4, 2, 7, 5, 8, 6 };
+      				  System.out.println("Median = " + findMedian(a)); 
+
             } else if (choice == 16) {
                 // Return only primes
             } else if (choice == 17) {
@@ -497,4 +500,18 @@ public static void ZeroIfLessThanZero()
 		
 		return arr2;
 	}
+
+    public static double getMedian(int a[]) 
+    { 
+        // First we sort the array
+        int n=a.length; 
+        Arrays.sort(a); 
+  
+        // check for even case 
+        if (n % 2 != 0) 
+        return (double)a[n / 2]; 
+      
+        return (double)(a[(n - 1) / 2] + a[n / 2]) / 2.0; 
+    }
 }//end of class main
+
