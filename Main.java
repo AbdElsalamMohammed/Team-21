@@ -76,7 +76,7 @@ public class Main {
             } else if (choice == 15) {
                 // Get median
                 int a[] = { 1, 3, 4, 2, 7, 5, 8, 6 };
-      				  System.out.println("Median = " + findMedian(a)); 
+      				  System.out.println("Median = " + getMedian(a)); 
 
             } else if (choice == 16) {
                 // Return only primes
