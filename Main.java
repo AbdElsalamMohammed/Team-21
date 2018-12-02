@@ -103,6 +103,9 @@ public class Main {
         System.out.println("    --Get Three Minimum numbers--    ");
         getThreeMinNums();
 
+		System.out.println("    --Return only primes--    "); 
+        Return_only_primes(); 
+        
         System.out.println("The maxmam 3 number in array ");
 
         Maxthreenumber();
