@@ -80,6 +80,7 @@ public class Main {
 
             } else if (choice == 16) {
                 // Return only primes
+                				Return_only_primes(); 
             } else if (choice == 17) {
                 // Zero if less than zero
             } else if (choice == 18) {
@@ -102,6 +103,9 @@ public class Main {
         System.out.println("    --Get Three Minimum numbers--    ");
         getThreeMinNums();
 
+		System.out.println("    --Return only primes--    "); 
+        Return_only_primes(); 
+        
         System.out.println("The maxmam 3 number in array ");
 
         Maxthreenumber();
@@ -513,5 +517,44 @@ public static void ZeroIfLessThanZero()
       
         return (double)(a[(n - 1) / 2] + a[n / 2]) / 2.0; 
     }
+    	public static void Return_only_primes() {
+    Scanner reader = new Scanner(System.in);
+		ArrayList <Integer>Array = new ArrayList<>();
+		ArrayList <Integer>primes = new ArrayList<>();
+		System.out.println("Enter numbers ");
+		String Input =reader.nextLine();
+		String[]word= Input.split(",");
+		for(int i = 0; i< word.length ; i++)
+		{
+	    Array.add(Integer.parseInt(word[i]));
+		}
+		
+		boolean p ;
+		for (int i =0 ; i< Array.size(); i++)
+		{
+			p = true;
+			int half = Array.get(i)/2 ;
+			for(int j = 2;  j < Array.get(i) ;j++)
+			{
+				if (Array.get(i)%j==0)
+				{
+					p = false ;
+					break;
+				}
+			}
+			if (p==true&&Array.get(i)!=0)
+				{
+				primes.add(Array.get(i));
+				}
+		}
+	
+		System.out.println("the prime numbers are: ");
+		for(int i = 0 ; i<primes.size(); i++ )
+		{
+			System.out.print(primes.get(i)+" ");
+		}
+        }
+
+      
 }//end of class main
 
